@@ -11,13 +11,15 @@ import java.util.List;
 
 //исключить вылет до текущего момента времени
 public class FlightToTheCurrentPointInTime implements Filter {
+
     private static List<Flight> list = new ArrayList<>();
+
 
     @Override
     public List<Flight> filter(List<Flight> flightList) {
         for (Flight flight : flightList) {
             for (Segment seg : flight.getSegments()) {
-                if (seg.getDepartureDate().isBefore(LocalDateTime.now())) {
+                if (seg.getDepartureDate().isAfter(LocalDateTime.now())) {
                     list.add(flight);
                 }
             }
