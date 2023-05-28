@@ -9,9 +9,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-//вылет до текущего момента времени
+//исключить вылет до текущего момента времени
 public class FlightToTheCurrentPointInTime implements Filter {
-    private List<Flight> list = new ArrayList<>();
+    private static List<Flight> list = new ArrayList<>();
 
     @Override
     public List<Flight> filter(List<Flight> flightList) {
